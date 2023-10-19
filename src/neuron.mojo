@@ -1,5 +1,5 @@
-from activation import Activation
-from axon import Axon
+from .activation import Activation
+from .axon import Axon
 
 
 struct Neuron[T: AnyType]:
