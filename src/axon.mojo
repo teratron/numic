@@ -1,2 +1,2 @@
 struct Axon[T: AnyType]:
-    pass
+    var value: T

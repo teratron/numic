@@ -9,18 +9,18 @@ struct Activation:
     * SIGMOID - Logistic, a.k.a. sigmoid or soft step (3);
     * TANH - TanH (hyperbolic tangent) (4).
     """
-    
-    var LINEAR: Int8
+
+    alias LINEAR = SIMD[DType.uint8, 1]
     """LINEAR - Linear/identity (0)."""
 
-    var RELU: Int8
+    alias RELU: UInt8
     """RELU - ReLu (rectified linear unit) (1)."""
 
-    var LEAKY_RELU: Int8
+    alias LEAKY_RELU: UInt8
     """LEAKY_RELU - Leaky ReLu (leaky rectified linear unit) (2)."""
 
-    var SIGMOID: Int8
+    alias SIGMOID: UInt8
     """SIGMOID - Logistic, a.k.a. sigmoid or soft step (3)."""
 
-    var TANH: Int8
+    alias TANH: UInt8
     """TANH - TanH (hyperbolic tangent) (4)."""
