@@ -1,4 +1,4 @@
-#from .activation import Activation
+from .activation import Activation
 from .axon import Axon
 
 
@@ -41,7 +41,12 @@ from .axon import Axon
 #     fn __init__(inout self):
 #         pass
 
-struct InputCell[T: AnyType]:
+
+trait FloatType:
+    alias f = Float16 #| Float32 | Float64
+
+
+struct InputCell[T: FloatType]:
     var value: T
     var outgoing: ListLiteral[Axon[T]]
 
@@ -52,22 +57,22 @@ struct OutputCell[T: AnyType]:
     var target: T
     var incoming: ListLiteral[Axon[T]]
     var bias: Bool
-    var activation: UInt8 #Activation
+    var activation: Activation
 
-@value
+
 struct HiddenCell[T: AnyType]:
     var value: T
     var miss: T
     var incoming: ListLiteral[Axon[T]]
     var outgoing: ListLiteral[Axon[T]]
     var bias: Bool
-    var activation: UInt8 #Activation
+    var activation: Activation
 
     # fn __init__(inout self):
     #     pass
 
-    fn __str__(self) -> String:
-        return "HiddenCell"
+    # fn __str__(self) -> String:
+    #     return "HiddenCell"
 
 
 fn main():
