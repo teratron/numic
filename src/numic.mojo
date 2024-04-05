@@ -1,0 +1,3 @@
+@value
+struct Numic:
+    pass
